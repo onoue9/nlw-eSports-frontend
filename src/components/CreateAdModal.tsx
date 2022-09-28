@@ -17,7 +17,7 @@ export function CreateAdModal() {
   const [useVoiceChannel, setUseVoiceChannel] = useState(false)
 
   useEffect(() => {
-    axios('http://18.204.201.209:3000/games')
+    axios('https://nlw-esports-backend-onoue9.herokuapp.com/games')
       .then(response => setGames(response.data))
   }, [])
 
@@ -28,7 +28,7 @@ export function CreateAdModal() {
     const data = Object.fromEntries(formData)
     console.log(data)
     try {
-      axios.post(`http://18.204.201.209:3000/games/${data.game}/ads`, {
+      axios.post(`https://nlw-esports-backend-onoue9.herokuapp.com/games/${data.game}/ads`, {
         name: data.name,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,

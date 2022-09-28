@@ -23,7 +23,7 @@ function App() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    axios('http://18.204.201.209:3000/games')
+    axios('https://nlw-esports-backend-onoue9.herokuapp.com/games')
       .then(response => setGames(response.data));
   }, []);
 
