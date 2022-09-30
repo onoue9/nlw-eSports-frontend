@@ -52,7 +52,7 @@ export function Game() {
         <img src={logoImg} alt="" />
       </NavLink>
 
-      <div className="mt-20">
+      <div className="flex flex-col justify-center items-center mt-20">
         <div className="w-auto">
           <img
             className=""
@@ -60,7 +60,7 @@ export function Game() {
             alt="Game banner"
           />
         </div>
-        <div className="my-10">
+        <div className="flex flex-col justify-center items-center my-10">
           <strong className="text-2xl text-white font-black bloack">
             {gameName}
           </strong>
@@ -85,7 +85,7 @@ export function Game() {
             title={gameName}
             adsCount={game?._count.ads}
           />
-        )) : <p className="text-white">Loading...</p>
+        )) : <p className="w-52 h-8 rounded-md mt-8 flex justify-center items-center bg-zinc-800 text-white">Nenhum anúncio</p>
       }
       </div>
     </div>
