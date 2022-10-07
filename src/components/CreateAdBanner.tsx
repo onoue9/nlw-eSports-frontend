@@ -3,10 +3,10 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 export function CreateAdBanner() {
   return (
-    <div className="pt-1 bg-nlw-gradient self-stretch rounded-lg mt-8 overflow-hidden">
-      <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center">
+    <div className="pt-1 bg-nlw-gradient self-center sm:self-stretch rounded-lg mt-8 overflow-hidden w-11/12 sm:w-full">
+      <div className="bg-[#2A2634] px-8 py-6 flex flex-col sm:flex-row gap-4 justify-between sm:justify-around items-center text-center">
         <div>
-          <strong className="text-2xl text-white font-black bloack">
+          <strong className="text-xl text-white font-black bloack">
             Não encontrou seu duo?
           </strong>
           <span className="text-zinc-400 block">

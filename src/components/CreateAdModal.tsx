@@ -48,19 +48,19 @@ export function CreateAdModal() {
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
 
-      <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
-        <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
+      <Dialog.Content className="fixed bg-[#2A2634] py-8 sm:py-4 px-6 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-11/12 sm:w-[480px] shadow-lg shadow-black/25">
+        <Dialog.Title className="text-xl text-center font-black">Publique um anúncio</Dialog.Title>
 
-        <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
+        <form onSubmit={handleCreateAd} className="mt-4 flex flex-col justify-center">
+          <div className="flex flex-col gap-2 sm:gap-4 w-full">
             <label htmlFor="game" className="font-semibold">Qual o game?</label>
             <select
               name="game"
               id="game"
-              className="bg-zinc-800 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
+              className="bg-zinc-800 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none w-full transition"
               defaultValue=""
             >
-              <option disabled value="">Seleciona o game que deseja jogar</option>
+              <option disabled value="">Seleciona o game</option>
 
               {games.map(game => {
                 return <option key={game.id} value={game.id}>{game.title}</option>
@@ -68,29 +68,29 @@ export function CreateAdModal() {
             </select>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 sm:gap-4">
             <label htmlFor="name">Seu nickname</label>
             <Input name="name" id="name" placeholder='Como te chamam dentro do game?'/>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-1 mb-4 gap-2 sm:gap-4">
+            <div className="flex flex-col gap-2 sm:gap-4">
               <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
               <Input name="yearsPlaying" id="yearsPlaying" type="number" placeholder='Tudo bem ser ZERO'/>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 sm:gap-4">
               <label htmlFor="discord">Qual seu Discord?</label>
               <Input name="discord" id="discord" placeholder='Usuario#0000'/>
             </div>
           </div>
 
-          <div className="flex gap-6">
-            <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 sm:gap-4">
+            <div className="flex flex-col gap-2 sm:gap-4">
               <label htmlFor="weekDays">Quando costuma jogar?</label>
 
               <ToggleGroup.Root
                 type='multiple'
-                className="grid grid-cols-4 gap-2"
+                className="grid grid-cols-7 gap-2 sm:gap-4"
                 value={weekDays}
                 onValueChange={setWeekDays}
               >
@@ -131,7 +131,7 @@ export function CreateAdModal() {
                 >S</ToggleGroup.Item>
               </ToggleGroup.Root>
             </div>
-            <div className="flex flex-col gap-2 flex-1">
+            <div className="flex flex-col gap-2 sm:gap-4 flex-1">
               <label htmlFor="hourStart">Qual horário do dia?</label>
               <div className="grid grid-cols-2 gap-2">
                 <Input name="hourStart" id="hourStart" type="time" placeholder='De'/>
@@ -140,7 +140,7 @@ export function CreateAdModal() {
             </div>
           </div>
 
-          <label className="mt-2 flex items-center gap-2 text-sm">
+          <label className="mt-4 flex items-center gap-2 sm:gap-4 text-sm">
             <Checkbox.Root
               className="w-6 h-6 p-1 rounded bg-zinc-900"
               checked={useVoiceChannel}

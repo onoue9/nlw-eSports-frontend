@@ -47,7 +47,7 @@ export function Game() {
   
   
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
+    <div className="w-screen sm:max-w-[1344px] mx-auto flex flex-col items-center my-20">
       <NavLink to="/nlw-esports-frontend/">
         <img src={logoImg} alt="" />
       </NavLink>
@@ -55,7 +55,7 @@ export function Game() {
       <div className="flex flex-col items-center justify-center mt-20">
         <div className="w-auto">
           <img
-            className=""
+            className="rounded-md"
             src={game?.bannerUrl}
             alt="Game banner"
           />
