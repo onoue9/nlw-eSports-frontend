@@ -11,6 +11,16 @@ interface Game {
   title: string;
 }
 
+const formValidate = (form: HTMLFormElement) => {
+  const formData = new FormData(form as HTMLFormElement);
+  const data = Object.fromEntries(formData);
+  
+  for (const key in data) {
+    if (!data[key]) return false;
+  }
+  return true;
+}
+
 export function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([])
   const [weekDays, setWeekDays] = useState<string[]>([])
@@ -26,6 +36,9 @@ export function CreateAdModal() {
 
     const formData = new FormData(event.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
+
+    if(!formValidate(event.target as HTMLFormElement)) return alert('Preencha todos os campos!')
+
     try {
       axios.post(`https://nlw-esports-backend.onrender.com/games/${data.game}/ads`, {
         name: data.name,
