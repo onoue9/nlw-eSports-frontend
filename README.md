@@ -17,7 +17,7 @@ Tela de ads
 
 Link para Demo:
 
-![alt text](https://onoue9.github.io/nlw-esports-frontend/)
+https://onoue9.github.io/nlw-esports-frontend/
 
 ## Instalação
 
