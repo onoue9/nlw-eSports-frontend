@@ -19,7 +19,7 @@ export function Home() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    axios('https://nlw-esports-backend-onoue9.herokuapp.com/games')
+    axios('https://nlw-esports-backend.onrender.com/games')
       .then(response => setGames(response.data));
   }, []);
   

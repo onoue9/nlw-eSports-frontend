@@ -30,7 +30,7 @@ export function Game() {
   const [game, setGame] = useState<Game>();
 
   useEffect(() => {
-    axios('https://nlw-esports-backend-onoue9.herokuapp.com/games')
+    axios('https://nlw-esports-backend.onrender.com/games')
       .then(response => setGame(
         response.data.find(
           (game: Game) => game.title === gameName
@@ -40,7 +40,7 @@ export function Game() {
   useEffect(() => {
     const id = game?.id;
     console.log(id)
-    axios(`https://nlw-esports-backend-onoue9.herokuapp.com/games/${id}/ads`)
+    axios(`https://nlw-esports-backend.onrender.com/games/${id}/ads`)
       .then(response => setDuos(response.data))
   }, [game])
 

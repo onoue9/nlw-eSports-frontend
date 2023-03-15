@@ -23,7 +23,7 @@ export function DuoBanner(props: DuoBannerProps) {
   const [discord, setDiscord] = useState<Discord>();
 
   useEffect(() => {
-    axios(`https://nlw-esports-backend-onoue9.herokuapp.com/ads/${props.id}/discord`)
+    axios(`https://nlw-esports-backend.onrender.com/ads/${props.id}/discord`)
       .then(response => setDiscord(response.data))
   })
 
