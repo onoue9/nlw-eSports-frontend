@@ -40,8 +40,10 @@ export function Game() {
   useEffect(() => {
     const id = game?.id;
     console.log(id)
-    axios(`https://nlw-esports-backend.onrender.com/games/${id}/ads`)
-      .then(response => setDuos(response.data))
+    if (id) {
+      axios(`https://nlw-esports-backend.onrender.com/games/${id}/ads`)
+        .then(response => setDuos(response.data))
+    }
   }, [game])
 
   
